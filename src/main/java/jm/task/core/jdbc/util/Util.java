@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Environment;
 import org.hibernate.cfg.Configuration;
@@ -44,7 +43,7 @@ public class Util {
     }
 
     private static SessionFactory sessionFactory;
-    public static Session getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
 
@@ -52,9 +51,9 @@ public class Util {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/mydbtest");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "snhX8xrL");
+                settings.put(Environment.URL, URL);
+                settings.put(Environment.USER, USERNAME);
+                settings.put(Environment.PASS, PASSWORD);
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
@@ -72,7 +71,7 @@ public class Util {
                 e.printStackTrace();
             }
         }
-        return sessionFactory.getCurrentSession();
+        return sessionFactory;
     }
 }
 
