@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface UserDao {
 
-    UserDao userDaoHibernate = new UserDaoHibernateImpl();
-
     void createUsersTable();
 
     void dropUsersTable();
