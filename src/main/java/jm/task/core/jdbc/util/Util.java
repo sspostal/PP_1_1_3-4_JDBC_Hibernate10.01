@@ -50,7 +50,7 @@ public class Util {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
 
-                settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+                settings.put(Environment.DRIVER, DRIVER);
                 settings.put(Environment.URL, URL);
                 settings.put(Environment.USER, USERNAME);
                 settings.put(Environment.PASS, PASSWORD);
